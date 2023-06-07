@@ -1,7 +1,21 @@
-.main{
+.todochart{
     display: flex;
     flex-flow: column wrap;
-    width: 40%;
-    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
     gap: 1rem;
+}
+
+.todochart-title{
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.progress{
+    height: 2rem;
+    font-size: medium;
+    width: 25vw;
 }

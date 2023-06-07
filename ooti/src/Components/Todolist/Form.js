@@ -21,6 +21,10 @@ export default function Form() {
         setDataArr(filteredState)
     }
 
+    const updateTask = id => {
+        console.log(id);
+    }
+
     const addTodo = e =>{
         e.preventDefault();
         const newArr = [...dataArr];
@@ -48,17 +52,20 @@ export default function Form() {
                     value={stateInput}
                     type="text" 
                     id="todo" 
+                    required
                 />
                 <button className="todolist-form-button btn btn-primary">Ajouter une tâche</button>
             </form>
             <ul>
-                {dataArr.map(item => {
+                {dataArr.map((item, setDataArr) => {
                     return (
                         <List 
                             txt={item.txt}
                             key={item.id}
                             id={item.id}
+                            updateFunction={updateTask}
                             delFunction={deleteTask} 
+                            dataArr={setDataArr}
                         />
                     )
                 })}

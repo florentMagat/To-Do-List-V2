@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <h1 className='title'>Todo List Ooti</h1>
-      <div className="main">
+      <div className='main'>
         <Form />
         <Todochart />
       </div>
