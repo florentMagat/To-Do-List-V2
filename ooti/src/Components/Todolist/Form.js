@@ -12,6 +12,8 @@ export default function Form() {
         {txt: "lkghsjklsghhms", id: uuidv4()},
     ])
 
+    const [stateInput, setStateInput] = useState();
+
     const deleteTask = id => {
         const filteredState = dataArr.filter(item => {
             return item.id !== id;
@@ -19,13 +21,35 @@ export default function Form() {
         setDataArr(filteredState)
     }
 
+    const addTodo = e =>{
+        e.preventDefault();
+        const newArr = [...dataArr];
+        const newTodo = {};
+        newTodo.txt = stateInput;
+        newTodo.id = uuidv4();
+
+        newArr.push(newTodo);
+        setDataArr(newArr);
+        setStateInput('');
+    }
+
+    const linkedInput = e => {
+        setStateInput(e);
+    }
+
     return (
-        <div className='main row align-items-center'>
-            <form className='main-form'>
+        <div className='todolist'>
+            <form onSubmit={e => addTodo(e)} className='todolist-form'>
                 <label htmlFor='todo'>
                 </label>
-                <input className="main-form-text" type="text" id="todo" />
-                <button className="main-form-button btn btn-primary">Ajouter une tâche</button>
+                <input 
+                    className="todolist-form-text" 
+                    onInput={e => linkedInput(e.target.value)}
+                    value={stateInput}
+                    type="text" 
+                    id="todo" 
+                />
+                <button className="todolist-form-button btn btn-primary">Ajouter une tâche</button>
             </form>
             <ul>
                 {dataArr.map(item => {
@@ -41,5 +65,4 @@ export default function Form() {
             </ul>
         </div>
     )
-
 }

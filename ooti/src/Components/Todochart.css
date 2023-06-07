@@ -1,0 +1,7 @@
+.main{
+    display: flex;
+    flex-flow: column wrap;
+    width: 40%;
+    margin-top: 10vh;
+    gap: 1rem;
+}

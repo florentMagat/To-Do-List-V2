@@ -1,13 +1,18 @@
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
 
 import Form from './Components/Todolist/Form';
+import Todochart from './Components/Todochart';
 
 function App() {
   return (
-    <div>
-      <h1 className="text-center mt-5">Todo List Ooti</h1>
-      <Form />
-    </div>
+    <>
+      <h1 className='title'>Todo List Ooti</h1>
+      <div className="main">
+        <Form />
+        <Todochart />
+      </div>
+    </>
   );
 }
 

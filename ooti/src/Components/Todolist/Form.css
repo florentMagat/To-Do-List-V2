@@ -1,23 +1,24 @@
-.main{
+.todolist{
     display: flex;
-    width: 50%;
-    margin-top: 10vh;
+    flex-flow: column nowrap;
+    margin-top: 5vh;
 }
 
-.main-form{
+.todolist-form{
     display: flex;
+    flex-flow: row;
     margin-bottom: 2rem;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     height: 5vh;
 }
 
-.main-form-text{
+.todolist-form-text{
     height: 100%;
     border-radius: 0.5rem;
     width: 20vw;
 }
 
-.main-form-button{
+.todolist-form-button{
     margin-left: 1rem;
 }

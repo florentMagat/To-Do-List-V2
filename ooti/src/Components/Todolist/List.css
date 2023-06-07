@@ -1,6 +1,8 @@
 .tasks{
     display: flex;
+    flex-flow: column wrap;
     justify-content: flex-end; 
+    max-width: 40vw;
     padding-right: 2rem;
 }
 
@@ -10,7 +12,7 @@
     padding: 1rem;
     margin-right: 2rem;
     margin-left: 2rem;
-    width: 40vw;
+    width: 40vw;  
 }
 
 .task-checkInput{
@@ -19,4 +21,5 @@
 
 .task-description{
     padding-right: 2rem;
+    max-width: 40vw;
 }
