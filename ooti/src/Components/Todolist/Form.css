@@ -1,0 +1,23 @@
+.main{
+    display: flex;
+    width: 50%;
+    margin-top: 10vh;
+}
+
+.main-form{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+}
+
+.main-form-text{
+    height: 100%;
+    border-radius: 0.5rem;
+    width: 20vw;
+}
+
+.main-form-button{
+    margin-left: 1rem;
+}

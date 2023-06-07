@@ -1,0 +1,22 @@
+.tasks{
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 2rem;
+}
+
+.task{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    width: 40vw;
+}
+
+.task-checkInput{
+    margin-right: 1rem;
+}
+
+.task-description{
+    padding-right: 2rem;
+}
