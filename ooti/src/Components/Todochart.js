@@ -2,6 +2,7 @@ import "./Todochart.css";
 
 export default function Todochart(props) {
 
+  //mise en forme de mes données brutes pour les rendre exploitables par notre graphique (pourcentages)
   const checkedPercent = `${props.checked/props.length*100}%`;
   const uncheckedPercent = `${props.unchecked/props.length*100}%`;
 
