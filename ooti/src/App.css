@@ -3,11 +3,3 @@
     justify-content: center;
     margin-top: 5vh;
 }
-
-.main{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    margin-top: 10vh;
-    align-items: center;
-}

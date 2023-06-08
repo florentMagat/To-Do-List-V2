@@ -1,8 +1,19 @@
+.main{
+    display: flex;
+    flex-flow: row nowrap;
+    /* justify-content: space-around; */
+    padding-top: 5vh;
+    margin-top: 5vh;
+    align-items: center;
+    background-color:whitesmoke
+}
+
 .todolist{
     display: flex;
     flex-flow: column wrap;
     width: 50%;
     align-items: flex-end;
+    padding-right: 5vw;
 }
 
 .todolist-form{

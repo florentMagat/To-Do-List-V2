@@ -1,16 +1,17 @@
 .todochart{
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 50%;
     gap: 1rem;
+    margin-left: 10vw;
+    margin-bottom: 5vh;
 }
 
 .todochart-title{
-    font-size: large;
+    font-size: medium;
     display: flex;
-    justify-content: center;
     margin-bottom: 1rem;
 }
 
