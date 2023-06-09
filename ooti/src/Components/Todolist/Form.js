@@ -80,11 +80,11 @@ export default function Form() {
             
             console.log(id)
             console.log(num)    
-            let newDataArr = [...dataArr];
-            let item = {...newDataArr[num]};
+            let newArr = [...dataArr];
+            let item = {...newArr[num]};
             item.txt = newTxt;
-            newDataArr[num] = item;
-            console.log(newDataArr);
+            newArr[num] = item;
+            setDataArr(newArr);
         };
 
     //création d'une nouvelle tâche, je push celle-ci dans un nouveau tableau puis je mets à jour le state 
