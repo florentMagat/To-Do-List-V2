@@ -24,8 +24,10 @@ export default function Form() {
     const fetchData = async () =>{
 
         axios.post('https://app.ooti.co/api/v1/token-auth/', {
-            username: process.env.USERNAME,
-            password: process.env.PASSWORD,
+            // username: process.env.USERNAME,
+            // password: process.env.PASSWORD,
+            username: "florentmagat@yahoo.com",
+            password: "n@qCtEAA3j4cAFm",
           })
           .then((response) => {
             localStorage.setItem('token', JSON.stringify(response));
