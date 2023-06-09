@@ -14,3 +14,8 @@
 .task-checkInput{
     margin-right: 1rem;
 }
+
+.checked{
+    background-color: rgba(169, 165, 165, 0.389);
+    text-decoration: line-through;
+}

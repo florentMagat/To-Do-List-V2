@@ -1,5 +1,10 @@
 .title{
     display: flex;
     justify-content: center;
+    color: whitesmoke;
     margin-top: 5vh;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.875);
 }

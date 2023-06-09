@@ -20,3 +20,8 @@
     font-size: medium;
     width: 25vw;
 }
+
+.checked2{
+    color: black;
+    justify-content: flex-end;
+}
