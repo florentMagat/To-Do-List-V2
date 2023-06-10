@@ -13,29 +13,26 @@ export default function Form() {
     console.log(token)
 
     const [dataArr, setDataArr] = useState([
-        {txt: "test 1", id: uuidv4(), done: true},
-        {txt: "test 2", id: uuidv4(), done: false},
-        {txt: "test 3", id: uuidv4(), done: false},
-        {txt: "test 4", id: uuidv4(), done: true},
+        {txt: "task number one", id: uuidv4(), done: true},
+        {txt: "task number two", id: uuidv4(), done: false},
+        {txt: "task number three", id: uuidv4(), done: false},
+        {txt: "task number four", id: uuidv4(), done: true},
     ]);
 
     //je récupère le token d'authentification qui va être stocké en local
-    useState(function(){
-    const fetchData = async () =>{
+    // useState(function(){
+    // const fetchData = async () =>{
 
-        axios.post('https://app.ooti.co/api/v1/token-auth/', {
-            // username: process.env.USERNAME,
-            // password: process.env.PASSWORD,
-            username: "florentmagat@yahoo.com",
-            password: "n@qCtEAA3j4cAFm",
-          })
-          .then((response) => {
-            localStorage.setItem('token', JSON.stringify(response));
-          });
-      };
-      fetchData();
-    });
-
+    //     axios.post('https://app.ooti.co/api/v1/token-auth/', {
+    //         // username: process.env.USERNAME,
+    //         // password: process.env.PASSWORD,
+    //       })
+    //       .then((response) => {
+    //         localStorage.setItem('token', JSON.stringify(response));
+    //       });
+    //   };
+    //   fetchData();
+    // });
 
     // useEffect(function(){
     //     const fetchData = async () =>{
@@ -48,8 +45,6 @@ export default function Form() {
     //       };
     //       fetchData();
     //     });
-
-
 
     //boucle for pour dénombrer les tâches effectuées et non effectuées
     let checked = 0;
@@ -72,20 +67,31 @@ export default function Form() {
     }
 
     //mise à jour de la description de ma tâche  
+    const updateTask= id => {
+        let newTxt = prompt("Vous pouvez renommer cette tâche");
+        let num = dataArr.findIndex(element => element.id === id);
+              
+        let newArr = [...dataArr];
+        let item = {...newArr[num]};
+        item.txt = newTxt;
+        newArr[num] = item;
+        setDataArr(newArr);
+    };
 
+    const checkedTask = (id, done) => {
 
-        const updateTask= id => {
-            let newTxt = prompt("Vous pouvez renommer cette tâche");
-            let num = dataArr.findIndex(element => element.id === id);
-            
-            console.log(id)
-            console.log(num)    
-            let newArr = [...dataArr];
-            let item = {...newArr[num]};
-            item.txt = newTxt;
-            newArr[num] = item;
-            setDataArr(newArr);
-        };
+        console.log(id)
+        console.log(done)
+
+        let num = dataArr.findIndex(element => element.id === id);
+        
+        let newArr = [...dataArr];
+        let item = {...newArr[num]};
+        item.done = !done;
+        newArr[num] = item;
+        setDataArr(newArr);   
+
+    }
 
     //création d'une nouvelle tâche, je push celle-ci dans un nouveau tableau puis je mets à jour le state 
     const addTodo = e =>{
@@ -133,6 +139,7 @@ export default function Form() {
                                 key={item.id}
                                 id={item.id}
                                 done={item.done}
+                                checkedFunction={checkedTask}
                                 updateFunction={updateTask}
                                 delFunction={deleteTask} 
                             />

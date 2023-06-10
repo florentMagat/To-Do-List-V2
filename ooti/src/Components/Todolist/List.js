@@ -3,7 +3,13 @@ import "./List.css";
 
 export default function List(props) {
 
-  const [ischecked, setChecked] = useState(false);
+  const defaultChecked = props.done ? props.done : false;
+  const [ischecked, setChecked] = useState(defaultChecked);
+
+  const checkHandler = () => {
+    setChecked(!ischecked)
+    props.checkedFunction(props.id, props.done)
+  }
   
   return (
     <li className="tasks">
@@ -13,8 +19,8 @@ export default function List(props) {
               <input 
                 className="task-checkInput" 
                 type="checkbox" 
-                ischecked={ischecked}
-                onChange={() => setChecked((prev) => !prev)}
+                checked={ischecked}
+                onChange={checkHandler}
                 aria-label="Checkbox for following text input"
                 {...props}
               />           
