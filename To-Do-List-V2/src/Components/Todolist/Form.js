@@ -1,6 +1,5 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid';
-import axios from 'axios';
 
 import List from './List';
 import Todochart from '../Todochart';
@@ -10,7 +9,7 @@ export default function Form() {
 
     const [stateInput, setStateInput] = useState();
     const token = localStorage.getItem('token');
-    console.log(token)
+    console.log(token);
 
     const [dataArr, setDataArr] = useState([
         {txt: "task number one", id: uuidv4(), done: true},
@@ -18,33 +17,6 @@ export default function Form() {
         {txt: "task number three", id: uuidv4(), done: false},
         {txt: "task number four", id: uuidv4(), done: true},
     ]);
-
-    //je récupère le token d'authentification qui va être stocké en local
-    // useState(function(){
-    // const fetchData = async () =>{
-
-    //     axios.post('https://app.ooti.co/api/v1/token-auth/', {
-    //         // username: process.env.USERNAME,
-    //         // password: process.env.PASSWORD,
-    //       })
-    //       .then((response) => {
-    //         localStorage.setItem('token', JSON.stringify(response));
-    //       });
-    //   };
-    //   fetchData();
-    // });
-
-    // useEffect(function(){
-    //     const fetchData = async () =>{
-    
-    //         axios.get('https://app.ooti.co/api/v1/organizations/membership/', 
-    //         { Authorization: token })
-    //           .then((tasksData) => {
-    //             console.log(tasksData);
-    //           });
-    //       };
-    //       fetchData();
-    //     });
 
     //boucle for pour dénombrer les tâches effectuées et non effectuées
     let checked = 0;
@@ -79,9 +51,6 @@ export default function Form() {
     };
 
     const checkedTask = (id, done) => {
-
-        console.log(id)
-        console.log(done)
 
         let num = dataArr.findIndex(element => element.id === id);
         

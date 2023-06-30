@@ -6,7 +6,7 @@ function App() {
   return (
     
     <>
-      <h1 className='title'>Todo List Ooti</h1>
+      <h1 className='title'>To Do List</h1>
       <Form />
     </>
   );
